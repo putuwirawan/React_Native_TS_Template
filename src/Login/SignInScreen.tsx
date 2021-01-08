@@ -16,7 +16,7 @@ type Props = StackScreenProps<Routers, 'SignInScreen'>;
 
 const userInfo = {username: 'katul', password: '123456'};
 
-export const SignInScreen: FC<Props> = ({navigation}) => {
+ const SignInScreen: FC<Props> = ({navigation}) => {
   const {signIn} = useContext(AppContext);
 
   const {width} = Dimensions.get('screen');
@@ -196,3 +196,4 @@ export const SignInScreen: FC<Props> = ({navigation}) => {
     </View>
   );
 };
+ export default SignInScreen

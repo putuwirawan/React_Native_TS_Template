@@ -12,7 +12,7 @@ import {Image} from 'react-native-elements';
 
 type Props = StackScreenProps<Routers, 'SplashScreen'>;
 
-export const splashScren: FC<Props> = ({navigation}) => {
+ const SplashScren: FC<Props> = ({navigation}) => {
   const logo = require('../Assets/Images/logo.png');
   const title = 'Planet Surf';
 
@@ -74,3 +74,4 @@ export const splashScren: FC<Props> = ({navigation}) => {
     </View>
   );
 };
+export default SplashScren

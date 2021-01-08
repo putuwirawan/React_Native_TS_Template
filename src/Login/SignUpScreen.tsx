@@ -12,7 +12,7 @@ import {Linkx} from '../Assets/Template/Linkx';
 
 type Props = StackScreenProps<Routers, 'SignUpScreen'>;
 
-export const SignUpScreen: FC<Props> = ({navigation}) => {
+const SignUpScreen: FC<Props> = ({navigation}) => {
   const {width} = Dimensions.get('screen');
   const [data, setData] = React.useState({
     name: '',
@@ -250,3 +250,4 @@ export const SignUpScreen: FC<Props> = ({navigation}) => {
     </View>
   );
 };
+ export default SignUpScreen

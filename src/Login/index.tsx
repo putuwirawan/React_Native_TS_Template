@@ -7,9 +7,9 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import Routers from '../Routers';
 // screen
-import {splashScren} from './splashScren';
-import {SignInScreen} from './SignInScreen';
-import {SignUpScreen} from './SignUpScreen';
+import SplashScreen from './splashScren';
+import SignInScreen from './SignInScreen';
+import SignUpScreen from './SignUpScreen';
 
 
 export const LoginStackScreen: FC = (props) => {
@@ -19,7 +19,7 @@ export const LoginStackScreen: FC = (props) => {
     <RootStack.Navigator
       initialRouteName="SplashScreen"
       screenOptions={{headerShown: false}}>
-      <RootStack.Screen name="SplashScreen" component={splashScren} />
+      <RootStack.Screen name="SplashScreen" component={SplashScreen} />
       <RootStack.Screen name="SignInScreen" component={SignInScreen} />
       <RootStack.Screen name="SignUpScreen" component={SignUpScreen} />
     </RootStack.Navigator>
