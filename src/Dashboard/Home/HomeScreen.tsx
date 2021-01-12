@@ -13,7 +13,7 @@ import {Button, Image} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Routers from '../../Routers';
 import {useTheme} from '@react-navigation/native';
-import {AnimateObject} from '../../Assets/Template/AnimateObject';
+import {MoveObject} from '../../Assets/Template/MoveObject';
 import {Center} from '../../Assets/Template/Center';
 import Style from '../../Assets/Template/Style';
 import {PanGestureHandler, State} from 'react-native-gesture-handler';
@@ -35,9 +35,10 @@ export const HomeScreen: FC<Props> = ({navigation, route}) => {
         alignItems: 'center',
       }}>
       <View>
-        <AnimateObject
+        <MoveObject
           color="red"
-          startPosition={{x:100, y:200}}
+          startPosition={{x: 100, y: 200}}
+          style={{width: 50, height: 50}}
           children={
             <Image
               source={require('../../Assets/Images/logo.png')}
