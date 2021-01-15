@@ -135,7 +135,8 @@ const App = () => {
   return (
     <NavigationContainer theme={theme}>
       <AppContext.Provider value={authContext}>
-        {isLogin ? <DrawerScreen /> : <LoginStackScreen />}
+        {/* {isLogin ? <DrawerScreen /> : <LoginStackScreen />} */}
+        <DrawerScreen /> 
       </AppContext.Provider>
     </NavigationContainer>
   );

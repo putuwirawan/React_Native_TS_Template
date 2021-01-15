@@ -2,7 +2,7 @@ import React from 'react';
 import {FC} from 'react';
 import {View, Text} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
-import Routers from '../Routers';
+import {Routers} from '../Assets/Helper';
 import Style from '../Assets/Template/Style';
 import {Center} from '../Assets/Template/Center';
 import {Buttonx} from '../Assets/Template/Buttonx';

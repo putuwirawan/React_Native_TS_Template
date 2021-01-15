@@ -1,36 +1,28 @@
 import React from 'react';
 import {FC} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {NavigationContainer, RouteProp} from '@react-navigation/native';
-import Routers from '../../Routers';
-
-import {HomeStackScreen} from '../Home';
-import {Page1StackScreen} from '../Page1';
-import {DrawerContent} from './DrawerContent'
-
-
-
-
+import {Screens} from '../../Assets/Helper';
+import {DrawerContent} from './DrawerContent';
 
 export const DrawerScreen: FC = ({}) => {
-
-  const Drawer = createDrawerNavigator<Routers>();
- 
+  const Drawer = createDrawerNavigator();
 
   return (
-    // <NavigationContainer>
-      <Drawer.Navigator
-        drawerContentOptions={{
-          activeTintColor: 'blue',
-          itemStyle: {marginVertical: 5},
-         
-        }}
-        
-        drawerContent={props=> <DrawerContent {...props}  />}
-        >
-        <Drawer.Screen name='HomeScreen' component={HomeStackScreen} />
-        <Drawer.Screen name="Page1Screen" component={Page1StackScreen} />
-      </Drawer.Navigator>
-    // </NavigationContainer>
+    <Drawer.Navigator
+      drawerContentOptions={{
+        activeTintColor: 'blue',
+        itemStyle: {marginVertical: 5},
+      }}
+      drawerContent={(props) => <DrawerContent {...props} />}>
+      {Screens.map((item, index) => {
+        return (
+          <Drawer.Screen
+            key={index}
+            name={item.deskription}
+            component={item.screenNavigation}
+          />
+        );
+      })}
+    </Drawer.Navigator>
   );
 };

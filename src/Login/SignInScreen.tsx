@@ -3,7 +3,7 @@ import {FC} from 'react';
 import {View, Text, Dimensions, Alert} from 'react-native';
 import {Center} from '../Assets/Template/Center';
 import {StackScreenProps} from '@react-navigation/stack';
-import Routers from '../Routers';
+import {Routers} from '../Assets/Helper';
 import Style from '../Assets/Template/Style';
 import LinearGradient from 'react-native-linear-gradient';
 import {Avatar, Input, Image} from 'react-native-elements';

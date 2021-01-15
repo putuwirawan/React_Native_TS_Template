@@ -1,15 +1,14 @@
 import React, {useContext, useEffect} from 'react';
 import {FC} from 'react';
 import {View, Text, Switch, StyleSheet, TouchableOpacity} from 'react-native';
-import {
-  DrawerContentScrollView,
-} from '@react-navigation/drawer';
+import {DrawerContentScrollView} from '@react-navigation/drawer';
 import {Avatar, Icon} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
 import {AppContext} from '../../Model/context';
 import {ListItem} from '../../Assets/Template/ListItem';
 import AsyncStorage from '@react-native-community/async-storage';
-import Screens from '../../Assets/Helper/Screen';
+
+import {Screens} from '../../Assets/Helper';
 interface DrawerContentProps {
   navigation: any;
 }
@@ -63,15 +62,12 @@ export const DrawerContent: FC<DrawerContentProps> = (props) => {
       <View style={{height: 450}}>
         <DrawerContentScrollView {...props}>
           <View>
-           
             {Screens.map((item, index) => {
               return (
                 <ListItem
                   key={index}
                   title={item.name}
-                  onPress={() =>
-                    props.navigation.navigate(item.screenNavigation)
-                  }
+                  onPress={() => props.navigation.navigate(item.deskription)}
                   avatar={
                     <Avatar
                       size="small"

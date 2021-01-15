@@ -5,23 +5,28 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {NavigationContainer} from '@react-navigation/native';
 
-import Routers from '../Routers';
+import {Routers, LogingScreen} from '../Assets/Helper';
 // screen
 import SplashScreen from './splashScren';
 import SignInScreen from './SignInScreen';
 import SignUpScreen from './SignUpScreen';
 
-
 export const LoginStackScreen: FC = (props) => {
-  const RootStack = createStackNavigator<Routers>();
+  const RootStack = createStackNavigator();
   return (
     // <NavigationContainer {...props}>
     <RootStack.Navigator
       initialRouteName="SplashScreen"
       screenOptions={{headerShown: false}}>
-      <RootStack.Screen name="SplashScreen" component={SplashScreen} />
-      <RootStack.Screen name="SignInScreen" component={SignInScreen} />
-      <RootStack.Screen name="SignUpScreen" component={SignUpScreen} />
+      {LogingScreen.map((item, index) => {
+        return (
+          <RootStack.Screen
+            key={index}
+            name={item.deskription}
+            component={item.screenNavigation}
+          />
+        );
+      })}
     </RootStack.Navigator>
     // </NavigationContainer>
   );
