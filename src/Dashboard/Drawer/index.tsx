@@ -4,7 +4,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {Screens} from '../../Assets/Helper';
 import {DrawerContent} from './DrawerContent';
 
-export const DrawerScreen: FC = ({}) => {
+export const DrawerScreen: FC = () => {
   const Drawer = createDrawerNavigator();
 
   return (

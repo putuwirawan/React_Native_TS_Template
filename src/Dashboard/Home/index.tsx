@@ -5,13 +5,14 @@ import {DrawerActions,useTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Icon} from 'react-native-elements';
 
-import Routers from '../../Routers';
+import {Routers} from '../../Assets/Helper';
 import {HomeScreen} from './HomeScreen';
 import {DrawerBotton} from '../../Assets/Template/DrawerBotton';
 type Props = StackScreenProps<Routers, 'HomeScreen'>;
 
 export const HomeStackScreen: FC<Props> = ({navigation, route}) => {
   const {colors} = useTheme();
+  
   const Stack = createStackNavigator<Props>();
 
 

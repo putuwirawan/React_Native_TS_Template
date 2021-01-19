@@ -5,7 +5,7 @@ import {DrawerActions} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Icon} from 'react-native-elements';
 
-import Routers from '../../Routers';
+import {Routers} from '../../Assets/Helper';
 import {Page1Screen} from './Page1Screen';
 
 type Props = StackScreenProps<Routers, 'Page1Screen'>;

@@ -11,7 +11,7 @@ import {
 import {StackScreenProps} from '@react-navigation/stack';
 import {Button, Image} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Routers from '../../Routers';
+import {Routers }from '../../Assets/Helper';
 import {useTheme} from '@react-navigation/native';
 import {MoveObject} from '../../Assets/Template/MoveObject';
 import {Center} from '../../Assets/Template/Center';

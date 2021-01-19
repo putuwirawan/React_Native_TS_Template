@@ -3,18 +3,19 @@ import {FC} from 'react';
 import {View, Text, Dimensions, Alert} from 'react-native';
 import {Center} from '../Assets/Template/Center';
 import {StackScreenProps} from '@react-navigation/stack';
-import {Routers} from '../Assets/Helper';
+import Routers from '../Assets/Helper/Routers';
+import * as API from '../Assets/Helper/API_helper';
 import Style from '../Assets/Template/Style';
 import LinearGradient from 'react-native-linear-gradient';
 import {Avatar, Input, Image} from 'react-native-elements';
 import {Buttonx} from '../Assets/Template/Buttonx';
 import {Linkx} from '../Assets/Template/Linkx';
 import {AppContext} from '../Model/context';
-import {Login} from '../Assets/Helper/API_helper';
+// import {Login} from '../Assets/Helper/API_helper';
 
 type Props = StackScreenProps<Routers, 'SignInScreen'>;
 
-const userInfo = {username: 'katul', password: '123456'};
+// const userInfo = {username: 'katul', password: '123456'};
 
  const SignInScreen: FC<Props> = ({navigation}) => {
   const {signIn} = useContext(AppContext);
@@ -82,7 +83,7 @@ const userInfo = {username: 'katul', password: '123456'};
   const handleSignIn = async () => {
     {
       if (data.username && data.password) {
-        let response = await Login({
+        let response = await API.Login({
           userName: data.username,
           password: data.password,
         });

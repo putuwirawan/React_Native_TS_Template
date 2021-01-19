@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
 import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Routers from '../../Routers';
+import {Routers} from '../../Assets/Helper';
 
 type Props = StackScreenProps<Routers, 'Page1Screen'>;
 

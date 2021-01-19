@@ -7,7 +7,7 @@ import {Icon} from 'react-native-elements';
 
 import {HomeScreen} from '../Dashboard/Home/HomeScreen';
 import {Page1StackScreen} from '../Dashboard/Page1';
-import Routers from '../Routers';
+import {Routers} from '../Assets/Helper';
 import { Page1Screen } from './Page1/Page1Screen';
 
 export const MainMenu: FC<Routers> = ({}) => {
