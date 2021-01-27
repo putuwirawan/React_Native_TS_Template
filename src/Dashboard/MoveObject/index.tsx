@@ -1,22 +1,20 @@
-import React from 'react';
-import {FC} from 'react';
-import {StackScreenProps} from '@react-navigation/stack';
+import React, {FC} from 'react';
+import {StackScreenProps, createStackNavigator} from '@react-navigation/stack';
 import {DrawerActions} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {Icon} from 'react-native-elements';
 
 import {Routers} from '../../Assets/Helper';
 import {MoveObjectScreen} from './MoveObjectScreen';
+import {DrawerBotton} from '../../Assets/Template/DrawerBotton';
 
-type Props = StackScreenProps<Routers, 'Page1Screen'>;
+type Props = StackScreenProps<Routers>;
 
-export const MoveObjectStackScreen: FC<Props> = ({navigation, route}) => {
+export const MoveObjectStackScreen: FC<Props> = ({
+  navigation,
+  route,
+}: Props) => {
   const Stack = createStackNavigator<Props>();
   const drawerButton = () => (
-    <Icon
-      name="list-outline"
-      type="ionicon"
-      size={30}
+    <DrawerBotton
       onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
     />
   );
@@ -33,10 +31,9 @@ export const MoveObjectStackScreen: FC<Props> = ({navigation, route}) => {
         name="route"
         component={MoveObjectScreen}
         options={{
-          title: 'PAGE !',
+          title: 'Move Object',
           headerLeft: drawerButton,
         }}
-        
       />
     </Stack.Navigator>
   );

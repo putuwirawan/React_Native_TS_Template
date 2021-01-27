@@ -3,6 +3,7 @@ import {FC} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {Screens} from '../../Assets/Helper';
 import {DrawerContent} from './DrawerContent';
+import {KatulScreen} from '../Home/KatulSreen';
 
 export const DrawerScreen: FC = () => {
   const Drawer = createDrawerNavigator();
@@ -23,6 +24,12 @@ export const DrawerScreen: FC = () => {
           />
         );
       })}
+      {/* List of Screen not list on drawer menu */}
+      <Drawer.Screen
+        key={Screens.length + 1}
+        name="KatulScreen"
+        component={KatulScreen}
+      />
     </Drawer.Navigator>
   );
 };

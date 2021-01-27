@@ -1,24 +1,14 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {FC} from 'react';
-import {
-  View,
-  Dimensions,
-  ViewProps,
-  StyleSheet,
-  Animated,
-  LogBox,
-} from 'react-native';
+import {View, Text, Dimensions, SafeAreaView, ScrollView} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
-import {Button, Image} from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {Routers }from '../../Assets/Helper';
+import {Image} from 'react-native-elements';
+import {Avatar, Icon} from 'react-native-elements';
+import {Routers} from '../../Assets/Helper';
 import {useTheme} from '@react-navigation/native';
-import {MoveObject} from '../../Assets/Template/MoveObject';
-import {Center} from '../../Assets/Template/Center';
-import Style from '../../Assets/Template/Style';
-import {PanGestureHandler, State} from 'react-native-gesture-handler';
-// import Animated from 'react-native-reanimated';
-
+import {Buttonx} from '../../Assets/Template/Buttonx';
+import Styles from '../../Assets/Template/Style';
+import {ListItem} from '../../Assets/Template/ListItem';
 type Props = StackScreenProps<Routers, 'HomeScreen'>;
 
 export const HomeScreen: FC<Props> = ({navigation, route}) => {
@@ -27,65 +17,26 @@ export const HomeScreen: FC<Props> = ({navigation, route}) => {
 
   useEffect(() => {}, []);
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: colors.background,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <View>
-        <MoveObject
-          color="red"
-          startPosition={{x: 100, y: 200}}
-          style={{width: 50, height: 50}}
-          children={
-            <Image
-              source={require('../../Assets/Images/logo.png')}
-              style={{
-                width: 100,
-                height: 100,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-              resizeMode="stretch"
-            />
-          }
-        />
+    <View style={[Styles.centerLeft]}>
+      <Buttonx
+        buttonText="Go to KAtul"
+        onPress={() => navigation.navigate('KatulScreen')}
+      />
 
-        {/* <PanGestureHandler
-          onGestureEvent={onGestureEvent}
-          onHandlerStateChange={onHandlerStartChange}>
-          <Animated.View style={[styles.box, {transform: [{translateX: translationX}]}]}>
-            <Image
-              source={require('../../Assets/Images/logo.png')}
-              style={{
-                width: 100,
-                height: 100,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-              resizeMode="stretch"
-            />
-          </Animated.View>
-        </PanGestureHandler> */}
-      </View>
+      <Buttonx
+        buttonText="Go to KAtul"
+        onPress={() => navigation.navigate('KatulScreen')}
+      />
+      <ListItem avatar={<Text>1</Text>} title="kopi" subTitle="rujak katul" onPress={() => {}} style={{width:width}} />
+      <ListItem avatar={<Text>100</Text>} title="kopi" subTitle="rujak katul gffgfgfgfgfg kkkjjkjhjhgjhk jkjghkjhjkjk ghghgh hhjhjhjh kjjhjkopi susu" onPress={() => {}} style={{width:width}}/>
+      <ListItem avatar={<Text>10</Text>} title="kopi" subTitle="rujak katul kopi susu" onPress={() => {}} />
+      <ListItem avatar={ <Avatar
+                      size="small"
+                      rounded
+                      icon={{name: 'home', type: 'ionicon'}}
+                      activeOpacity={1}
+                      containerStyle={{backgroundColor: '#7BA8AE'}}
+                    />} title="kopi" subTitle="rujak katul kopi susu" onPress={() => {}} />
     </View>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    height: 150,
-    width: 150,
-    borderRadius: 150 / 2,
-    borderWidth: 2,
-    borderColor: 'blue',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

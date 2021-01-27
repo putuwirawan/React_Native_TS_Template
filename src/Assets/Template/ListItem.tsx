@@ -1,43 +1,55 @@
 import React from 'react';
 import {FC} from 'react';
 import {useTheme} from '@react-navigation/native';
-import {Avatar, Icon, Divider} from 'react-native-elements';
+import {Icon} from 'react-native-elements';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-interface DrawerProps {
+interface ListItemProps {
   title: string;
-  keyIndext?: string | number | undefined | null;
+  key?: string | number | undefined | null;
   color?: string; //background color
   subTitle?: string; //
   onPress: () => void;
   iconRight?: boolean;
   enableDot?: boolean;
   avatar?: React.ReactNode;
+  style?: any;
 }
 
-export const ListItem: FC<DrawerProps> = (props) => {
-  const {title, onPress, subTitle, avatar, color, keyIndext} = props;
+export const ListItem: FC<ListItemProps> = (props) => {
+  const {title, onPress, subTitle, avatar, color, key, style} = props;
   const {colors} = useTheme();
 
   return (
-    <TouchableOpacity onPress={onPress} style={{padding: 2, flex: 1}} key={keyIndext}>
+    <TouchableOpacity onPress={onPress} style={{padding: 2}} key={key}>
       <View
-        style={{
-          paddingLeft: 10,
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}>
+        style={[
+          {
+            minWidth: 100,
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+          },
+          style,
+        ]}>
         <View
           style={{
-            paddingLeft: 10,
             flex: 8,
+            paddingLeft: 10,
             flexDirection: 'row',
             backgroundColor: color ? color : colors.border,
             borderTopLeftRadius: 5,
           }}>
-          {avatar ? <View>{avatar}</View> : null}
+          {avatar ? (
+            <View
+              style={{
+                alignItems: 'flex-start',
+                justifyContent: 'center',
+                paddingHorizontal: 2,
+                minWidth:25
+              }}>
+              {avatar}
+            </View>
+          ) : null}
 
           <View
             style={{
@@ -45,12 +57,12 @@ export const ListItem: FC<DrawerProps> = (props) => {
               alignItems: 'flex-start',
               justifyContent: 'center',
             }}>
-            <Text style={{color: colors.text, fontSize: 17, fontWeight: '700'}}>
+            <Text style={{color: colors.text, fontSize: 17, fontWeight: '600'}}>
               {title}
             </Text>
             {subTitle ? (
               <Text
-                style={{color: colors.text, fontSize: 14, fontWeight: '500'}}>
+                style={{color: colors.text, fontSize: 14, fontWeight: '500', fontStyle:'italic'}}>
                 {subTitle}
               </Text>
             ) : null}
@@ -59,7 +71,6 @@ export const ListItem: FC<DrawerProps> = (props) => {
 
         <View
           style={{
-            flex: 1,
             backgroundColor: color ? color : colors.border,
             alignItems: 'flex-end',
             justifyContent: 'center',
@@ -72,6 +83,7 @@ export const ListItem: FC<DrawerProps> = (props) => {
         </View>
       </View>
     </TouchableOpacity>
+
     //  name="g-translate"
   );
 };

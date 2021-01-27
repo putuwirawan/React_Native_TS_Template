@@ -7,7 +7,8 @@ interface DrawerProps {
   onPress?: () => void;
 }
 
-export const DrawerBotton: FC<DrawerProps> = ({onPress}) => {
+export const DrawerBotton: FC<DrawerProps> = (props) => {
+  const {onPress} = props;
   const {colors} = useTheme();
   return (
     <Icon

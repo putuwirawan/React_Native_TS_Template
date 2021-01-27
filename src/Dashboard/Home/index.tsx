@@ -7,8 +7,9 @@ import {Icon} from 'react-native-elements';
 
 import {Routers} from '../../Assets/Helper';
 import {HomeScreen} from './HomeScreen';
+
 import {DrawerBotton} from '../../Assets/Template/DrawerBotton';
-type Props = StackScreenProps<Routers, 'HomeScreen'>;
+type Props = StackScreenProps<Routers>;
 
 export const HomeStackScreen: FC<Props> = ({navigation, route}) => {
   const {colors} = useTheme();
@@ -17,15 +18,14 @@ export const HomeStackScreen: FC<Props> = ({navigation, route}) => {
 
 
   return (
-    <Stack.Navigator
+    <Stack.Navigator 
       screenOptions={{
-        headerStyle: {backgroundColor: colors.primary},
-        
+        headerStyle: {backgroundColor: colors.primary},        
         headerTitleStyle: {fontWeight: 'bold'},
         headerTitleAlign: 'center',
       }}>
       <Stack.Screen
-        name="route"
+        name='route'
         component={HomeScreen}
         options={{
           title: 'Welcome',
