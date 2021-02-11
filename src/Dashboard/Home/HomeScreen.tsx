@@ -27,16 +27,49 @@ export const HomeScreen: FC<Props> = ({navigation, route}) => {
         buttonText="Go to KAtul"
         onPress={() => navigation.navigate('KatulScreen')}
       />
-      <ListItem avatar={<Text>1</Text>} title="kopi" subTitle="rujak katul" onPress={() => {}} style={{width:width}} />
-      <ListItem avatar={<Text>100</Text>} title="kopi" subTitle="rujak katul gffgfgfgfgfg kkkjjkjhjhgjhk jkjghkjhjkjk ghghgh hhjhjhjh kjjhjkopi susu" onPress={() => {}} style={{width:width}}/>
-      <ListItem avatar={<Text>10</Text>} title="kopi" subTitle="rujak katul kopi susu" onPress={() => {}} />
-      <ListItem avatar={ <Avatar
-                      size="small"
-                      rounded
-                      icon={{name: 'home', type: 'ionicon'}}
-                      activeOpacity={1}
-                      containerStyle={{backgroundColor: '#7BA8AE'}}
-                    />} title="kopi" subTitle="rujak katul kopi susu" onPress={() => {}} />
+      <ListItem
+        avatar={<Text>1</Text>}
+        title="Product View"
+        onPress={() => {
+          navigation.navigate('ShowProductView');
+        }}
+        style={{width: width}}
+      />
+      <ListItem
+        avatar={<Text>1</Text>}
+        title="Snack View"
+        onPress={() => {
+          navigation.navigate('SnackView');
+        }}
+        style={{width: width}}
+      />
+      <ListItem
+        avatar={<Text>100</Text>}
+        title="DropDown"
+        onPress={() => {}}
+        style={{width: width}}
+      />
+      <ListItem
+        avatar={<Text>10</Text>}
+        title="Sliding Image"
+        subTitle="rujak katul kopi susu"
+        onPress={() => {}}
+        style={{width: width}}
+      />
+      <ListItem
+        avatar={
+          <Avatar
+            size="small"
+            rounded
+            icon={{name: 'home', type: 'ionicon'}}
+            activeOpacity={1}
+            containerStyle={{backgroundColor: '#7BA8AE'}}
+          />
+        }
+        title="kopi"
+        onPress={() => {}}
+        style={{width: width}}
+      />
     </View>
   );
 };

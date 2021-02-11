@@ -3,15 +3,19 @@ import {StyleSheet, Dimensions} from 'react-native';
 const {height} = Dimensions.get('screen');
 const height_logo = height * 0.25;
 const width_logo = height * 0.25;
-const baseColor = {darkTheme:{bacground:'#000C66'}, lightTheme:{background:'red'}};
+const baseColor = {
+  darkTheme: {bacground: '#000C66'},
+  lightTheme: {background: 'red'},
+};
 
 const styles = StyleSheet.create({
   container: {flex: 1},
 
   header: {color: '#05375a', fontSize: 25, fontWeight: 'bold'},
   subHeader: {color: '#05375a', fontSize: 20, fontWeight: 'bold'},
-  button: {alignItems: 'flex-end', marginTop: 20,marginHorizontal:5},
-  dashboardLogo:{height: height_logo , width:width_logo },
+  divider:{borderBottomColor:'#78BFDC',borderBottomWidth:1},
+  button: {alignItems: 'flex-end', marginTop: 20, marginHorizontal: 5},
+  dashboardLogo: {height: height_logo, width: width_logo},
   // kjjkj
   centerLeft: {
     alignItems: 'flex-start',
@@ -32,7 +36,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  styleRow: {  
+  styleRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
@@ -53,9 +57,17 @@ const styles = StyleSheet.create({
   title: {fontSize: 20, fontWeight: '700'},
   subTitle: {fontSize: 17, fontWeight: '500'},
   subTitleBold: {fontSize: 17, fontWeight: 'bold'},
-  childTitle: {fontSize: 15, fontWeight: '500', fontStyle: 'italic'},
-  childTitleBold: {fontSize: 15, fontWeight: 'bold', fontStyle: 'italic'},
-
+  childTitle: {fontSize: 14, fontWeight: '500', fontStyle: 'italic'},
+  childTitleBold: {fontSize: 14, fontWeight: 'bold', fontStyle: 'italic'},
+  h3: {fontSize: 12, fontWeight: '400', fontStyle: 'normal'},
+  h3Bold: {fontSize: 12, fontWeight: '600', fontStyle: 'normal'},
+  h4: {fontSize: 10, fontWeight: '500', fontStyle: 'normal'},
+  h5: {fontSize: 9, fontWeight: '500', fontStyle: 'normal'},
+  textPrice: {fontSize: 11, fontWeight: '700', fontStyle: 'italic'},
+  strikeThroughtextStyle: {
+    textDecorationLine: 'line-through',
+    color: '#E74747',
+  },
 });
 export {baseColor};
 export default styles;
