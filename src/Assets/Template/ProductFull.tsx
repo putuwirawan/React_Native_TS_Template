@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {CurrencyFormat} from '../../Assets/Helper/GlobalFunction';
-
+import StarRating from 'react-native-star-rating';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient';
 import {Card, ListItem, Button} from 'react-native-elements';
@@ -83,11 +83,17 @@ export const ProductFull: FC<ProductFullProps> = (props) => {
               </View>
             </View>
             <View style={{alignItems: 'center'}}>
-              {/* <StarRating
-              disabled={false}
-              maxStars={5}
-              rating={5}
-             /> */}
+              <StarRating
+                disabled={false}
+                starSize={25}
+                fullStar={require('../Images/FullStart1.png')}
+                emptyStar={require('../Images/EmptyStar.png')}
+                halfStar={require('../Images/HalpStar.png')}
+                iconSet={'FontAwesome'}
+                maxStars={5}
+                rating={3.73}
+                halfStarEnabled
+              />
             </View>
             <View
               style={[
@@ -97,15 +103,20 @@ export const ProductFull: FC<ProductFullProps> = (props) => {
                   justifyContent: 'center',
                 },
               ]}>
-              <Text>
-                Logo dfdfdfdfd dfdfdfdfd dfdfdfdfd sdsdsdsdsdds ddsdsdsdsds
-                sdsdsdsdsdsdsdsds sdsdsdsdsds
+              <Text
+                style={{fontSize: 16, fontStyle: 'italic'}}
+                numberOfLines={2}>
+                {data.title}
               </Text>
             </View>
             <View style={[{flexDirection: 'row'}]}>
               <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
               <View style={{width: 50, height: 50, backgroundColor: 'blue'}} />
               <View style={{width: 50, height: 50, backgroundColor: 'green'}} />
+            </View>
+            <View>
+              <Text>Produc Detail :</Text>
+              
             </View>
           </View>
         </View>

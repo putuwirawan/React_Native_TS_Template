@@ -22,6 +22,7 @@
     "@react-navigation/stack": "^5.12.8",
     "@types/qs": "^6.9.5",
     "@types/react": "^17.0.1",
+    "@types/react-native-star-rating": "^1.1.1",
     "galio-framework": "^0.7.1",
     "qs": "^6.9.4",
     "react": "16.13.1",
@@ -33,7 +34,9 @@
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.16.1",
+    "react-native-star-rating": "^1.1.0",
     "react-native-vector-icons": "^7.1.0",
+    "react-native-webview": "^11.2.3",
     "rimraf": "^3.0.2",
     "universal-panresponder": "^0.6.5"
   },

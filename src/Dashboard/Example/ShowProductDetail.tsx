@@ -21,7 +21,7 @@ const ShowProductDetail: FC<Props> = ({navigation, route}) => {
           navigation.navigate('HomeScreen');
         }}
       />
-      <Text>{title}</Text>
+    
       <View style={{flexDirection: 'row'}}>
         <ProductFull navigation={navigation} data={data}/>
       </View>
